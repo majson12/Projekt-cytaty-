@@ -2,34 +2,37 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biblioteka Cytatów</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Pióro" class="pen-icon"> Biblioteka Cytatów</h1>
 
-    <div class="controls">
-      <select id="categorySelect">
-        <option value="all">Wszystkie</option>
-        <option value="Filozofia">Filozofia</option>
-        <option value="Literatura">Literatura</option>
-        <option value="Nauka">Nauka</option>
-        <option value="Historia">Historia</option>
-      </select>
-      <button id="newQuote">Nowy Cytat</button>
-    </div>
+  <div class="container">
+    <h1><img src="https://cdn-icons-png.flaticon.com/512/2907/2907494.png" alt="Pióro" class="icon"> Biblioteka Cytatów</h1>
+    
+    <select id="authorSelect">
+      <option value="all">Wszyscy Autorzy</option>
+      <option value="Szekspir">Szekspir</option>
+      <option value="Szymborska">Szymborska</option>
+      <option value="Camus">Camus</option>
+      <option value="Platon">Platon</option>
+      <option value="Nietzsche">Nietzsche</option>
+      <option value="Shaw">Shaw</option>
+      <option value="Konfucjusz">Konfucjusz</option>
+    </select>
 
     <div id="quoteBox" class="quote-box">
-      <p id="quoteText">Kliknij "Nowy Cytat", aby zobaczyć podpowiedź AI!</p>
-      <p id="quoteAuthor"></p>
-      <p id="quoteInfo"></p>
+      <p id="quoteText">Kliknij, aby zobaczyć cytat!</p>
     </div>
+
+    <button id="newQuote">Nowy Cytat</button>
+    <p class="ai-hint">Podpowiedź AI ✨</p>
   </div>
 
-  <audio id="pageSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_64fd6fe3ce.mp3?filename=page-flip-3-146307.mp3"></audio>
+  <audio id="pageTurnSound" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_ef2c671ba2.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
