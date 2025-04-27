@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { text: "Bez muzyki życie byłoby pomyłką.", author: "Nietzsche" },
     { text: "Życie nie polega na czekaniu aż burza minie, ale na nauczeniu się tańczyć w deszczu.", author: "Shaw" },
     { text: "Wszyscy ludzie są tacy sami; różnią się tylko swoimi zwyczajami.", author: "Konfucjusz" },
-    // ... tutaj możesz dorzucić więcej cytatów, aż do 50!
+   
   ];
 
   const quoteText = document.getElementById('quoteText');
