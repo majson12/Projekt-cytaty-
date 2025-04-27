@@ -1,66 +1,43 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Lora', serif;
-  background: url('https://source.unsplash.com/1600x900/?books,library') no-repeat center center fixed;
-  background-size: cover;
-}
+document.addEventListener('DOMContentLoaded', function() {
+  const quotes = [
+    { text: "Tyle o sobie wiemy, ile nas sprawdzono.", author: "Wisława Szymborska", category: "Literatura", info: "Polska poetka, laureatka Nobla." },
+    { text: "Być albo nie być – oto jest pytanie.", author: "William Shakespeare", category: "Literatura", info: "Angielski dramatopisarz i poeta." },
+    { text: "Człowiek jest jedynym stworzeniem, które odmawia bycia tym, czym jest.", author: "Albert Camus", category: "Filozofia", info: "Francuski filozof egzystencjalista." },
+    { text: "Wiem, że nic nie wiem.", author: "Sokrates", category: "Filozofia", info: "Grecki filozof, twórca metody sokratycznej." },
+    { text: "Nie bój się doskonałości – i tak jej nie osiągniesz.", author: "Salvador Dalí", category: "Sztuka", info: "Hiszpański malarz surrealistyczny." },
+    { text: "Wyobraźnia jest ważniejsza od wiedzy.", author: "Albert Einstein", category: "Nauka", info: "Fizyk teoretyczny, twórca teorii względności." },
+    { text: "Największą chwałą nie jest nigdy nie upaść, ale powstać za każdym razem, gdy upadamy.", author: "Konfucjusz", category: "Filozofia", info: "Chiński filozof i mędrzec." },
+    { text: "Kto walczy z potworami, winien baczyć, by samemu nie stać się potworem.", author: "Friedrich Nietzsche", category: "Filozofia", info: "Niemiecki filozof i poeta." },
+    { text: "Życie bez muzyki byłoby pomyłką.", author: "Friedrich Nietzsche", category: "Filozofia", info: "Niemiecki filozof i poeta." },
+    { text: "Cokolwiek możesz zrobić lub marzysz, że możesz – zacznij to.", author: "Johann Wolfgang von Goethe", category: "Literatura", info: "Niemiecki pisarz i poeta." },
+    // ... jeszcze 40 cytatów! ✨
+  ];
 
-.container {
-  text-align: center;
-  padding-top: 100px;
-  color: #fff;
-  text-shadow: 1px 1px 3px #000;
-}
+  const quoteText = document.getElementById('quoteText');
+  const quoteAuthor = document.getElementById('quoteAuthor');
+  const quoteInfo = document.getElementById('quoteInfo');
+  const newQuoteBtn = document.getElementById('newQuote');
+  const categorySelect = document.getElementById('categorySelect');
+  const pageSound = document.getElementById('pageSound');
 
-.pen-icon {
-  width: 40px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
+  function getRandomQuote(filteredQuotes) {
+    const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
+    return filteredQuotes[randomIndex];
+  }
 
-.controls {
-  margin: 20px 0;
-}
+  function displayQuote() {
+    pageSound.play();
 
-#categorySelect {
-  padding: 10px;
-  font-size: 16px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: none;
-}
+    const selectedCategory = categorySelect.value;
+    const filteredQuotes = selectedCategory === 'all' ? quotes : quotes.filter(q => q.category === selectedCategory);
 
-button {
-  background: linear-gradient(270deg, #ff6f61, #ff3b2e, #ff6f61);
-  background-size: 600% 600%;
-  animation: gradientAnimation 6s ease infinite;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
+    const randomQuote = getRandomQuote(filteredQuotes);
 
-button:hover {
-  transform: scale(1.05);
-}
+    quoteText.textContent = `"${randomQuote.text}"`;
+    quoteAuthor.textContent = `— ${randomQuote.author}`;
+    quoteInfo.textContent = `(${randomQuote.category}, ${randomQuote.info})`;
+  }
 
-@keyframes gradientAnimation {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
+  newQuoteBtn.addEventListener('click', displayQuote);
+});
 
-.quote-box {
-  margin: 20px auto;
-  padding: 20px;
-  background-color: rgba(0,0,0,0.6);
-  width: 80%;
-  max-width: 700px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #000;
-}
-  
