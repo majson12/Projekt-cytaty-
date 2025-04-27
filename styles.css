@@ -2,64 +2,91 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lora', serif;
-  background: url('https://source.unsplash.com/1600x900/?books,library') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center fixed;
   background-size: cover;
 }
 
 .container {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 80px;
   color: #fff;
-  text-shadow: 1px 1px 3px #000;
+  text-shadow: 1px 1px 2px #000;
 }
 
-.pen-icon {
+.icon {
   width: 40px;
   vertical-align: middle;
   margin-right: 10px;
 }
 
-.controls {
-  margin: 20px 0;
-}
-
-#categorySelect {
-  padding: 10px;
-  font-size: 16px;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: none;
+.quote-box {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
 }
 
 button {
-  background: linear-gradient(270deg, #ff6f61, #ff3b2e, #ff6f61);
-  background-size: 600% 600%;
-  animation: gradientAnimation 6s ease infinite;
+  background: linear-gradient(45deg, #ff6f61, #ff3b2e, #ff6f61);
+  background-size: 200% 200%;
+  animation: gradientMove 4s ease infinite;
   border: none;
-  padding: 10px 20px;
-  color: white;
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 12px 24px;
+  color: #fff;
+  font-size: 18px;
   cursor: pointer;
-  transition: transform 0.3s;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-@keyframes gradientAnimation {
+@keyframes gradientMove {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
 }
 
-.quote-box {
-  margin: 20px auto;
-  padding: 20px;
-  background-color: rgba(0,0,0,0.6);
-  width: 80%;
-  max-width: 700px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #000;
+button:hover {
+  opacity: 0.9;
+}
+
+select {
+  margin-bottom: 20px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+.ai-hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ffebc1;
+}
+
+/* Animacja motyla */
+@keyframes flyIn {
+  0% {
+    transform: translateY(50px) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+#quoteText {
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+.animate-quote {
+  animation: flyIn 1s ease forwards;
 }
