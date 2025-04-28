@@ -66,6 +66,7 @@ select {
   color: #ffebc1;
 }
 
+/* Animacja cytatu */
 @keyframes flyIn {
   0% {
     transform: translateY(50px) scale(0.8);
@@ -89,3 +90,4 @@ select {
 .animate-quote {
   animation: flyIn 1s ease forwards;
 }
+
