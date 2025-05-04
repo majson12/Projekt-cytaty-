@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
     { text: "Wszyscy jesteśmy geniuszami, ale jeśli oceniasz rybę po jej zdolności wspinania się na drzewo, całe życie będzie wierzyć, że jest głupia.", author: "Albert Einstein" },
     { text: "W ciszy odnajdujemy prawdę.", author: "Laozi" },
     { text: "Ten, kto przestaje się uczyć, jest stary, niezależnie od tego, czy ma dwadzieścia czy osiemdziesiąt lat.", author: "Henry Ford" },
-    { text: "Nie ma nic bardziej niebezpiecznego niż człowiek, który nie ma nic do stracenia.", author: "Camus" },
     { text: "Nie można odkryć nowych oceanów, jeśli nie ma się odwagi stracić z oczu brzegu.", author: "André Gide" },
     { text: "Nie ma rzeczy niemożliwych, są tylko rzeczy trudne do zrealizowania.", author: "Szymborska" },
     { text: "Człowiek jest tym, co je.", author: "Ludwig Feuerbach" },
     { text: "Nie można być szczęśliwym bez miłości.", author: "Szekspir" },
     { text: "Nie ma nic bardziej praktycznego niż dobra teoria.", author: "Kant" },
     { text: "Człowiek jest istotą społeczną.", author: "Arystoteles" },
-    { text: "Mówisz, że kochasz deszcz, a rozkładasz parasolkę, gdy zaczyna padać. Mówisz, że kochasz słońce, a chowasz się w cieniu, gdy zaczyna świecić. Mówisz, że kochasz wiatr, a zamykasz okno, gdy zaczyna wiać. Właśnie dlatego boję się, kiedy mówisz, że mnie kochasz.", author: "Szekspir" }
+    { text: "Nie ma nic bardziej niebezpiecznego niż człowiek, który nie ma nic do stracenia.", author: "Camus" },
+    { text: "Mówisz, że kochasz deszcz, a rozkładasz parasolkę, gdy zaczyna padać. Mówisz, że kochasz słońce, a chowasz się w cieniu, gdy zaczyna grzać. Mówisz, że kochasz wiatr, a zamykasz okno, gdy zaczyna wiać. Właśnie dlatego boję się, gdy mówisz, że kochasz mnie.", author: "Szekspir" }
   ];
 
   const quoteText = document.getElementById('quoteText');
@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         q.author.includes(author) || (author === "Inni" && !["Szekspir", "Szymborska", "Camus", "Sokrates"].includes(q.author))
       );
     }
-    if (filteredQuotes.length === 0) return null;
     const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
     return filteredQuotes[randomIndex];
   }
@@ -61,14 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedAuthor = authorSelect.value;
     const quote = getRandomQuote(selectedAuthor);
 
-    if (!quote) {
-      quoteText.textContent = "Brak cytatów dla wybranego autora.";
-      return;
-    }
-
     quoteText.style.opacity = 0;
+
     setTimeout(() => {
-      quoteText.innerHTML = `"${quote.text}" — <b>${quote.author}</b>`;
+      quoteText.textContent = `"${quote.text}" — ${quote.author}`;
       quoteText.style.opacity = 1;
     }, 400);
   }
