@@ -2,36 +2,36 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biblioteka Cytatów</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div class="overlay"></div>
 
   <div class="container">
-    <h1><span class="feather">&#9997;</span> Biblioteka Cytatów</h1>
+    <h1><img src="https://cdn-icons-png.flaticon.com/512/2907/2907494.png" alt="Pióro" class="icon"> Biblioteka Cytatów</h1>
     
-    <div class="dropdown">
-      <select id="authorSelect">
-        <option value="all">Wszyscy autorzy</option>
-        <option value="Szekspir">Szekspir</option>
-        <option value="Szymborska">Szymborska</option>
-        <option value="Camus">Camus</option>
-        <option value="Sokrates">Sokrates</option>
-        <option value="Inni">Inni</option>
-      </select>
-    </div>
+    <select id="authorSelect">
+      <option value="all">Wszyscy Autorzy</option>
+      <option value="Szekspir">Szekspir</option>
+      <option value="Szymborska">Szymborska</option>
+      <option value="Camus">Camus</option>
+      <option value="Platon">Platon</option>
+      <option value="Nietzsche">Nietzsche</option>
+      <option value="Shaw">Shaw</option>
+      <option value="Konfucjusz">Konfucjusz</option>
+    </select>
 
     <div id="quoteBox" class="quote-box">
-      <p id="quoteText">Kliknij "Nowy Cytat", aby rozpocząć!</p>
+      <p id="quoteText">Kliknij, aby zobaczyć cytat!</p>
     </div>
 
     <button id="newQuote">Nowy Cytat</button>
+    <button id="saveQuote">Zapisz Cytat</button>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
+
