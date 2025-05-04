@@ -2,15 +2,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lora', serif;
-  background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center fixed;
+  background: url('background.jpg.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   text-align: center;
-  padding-top: 80px;
   color: #fff;
   text-shadow: 1px 1px 2px #000;
+  padding: 20px;
+} 
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .icon {
@@ -83,10 +92,14 @@ select {
 
 #quoteText {
   display: inline-block;
+  font-size: 20px;
+  line-height: 1.6;
   transition: all 0.5s ease;
 }
+
 
 .animate-quote {
   animation: flyIn 1s ease forwards;
 }
+
 
