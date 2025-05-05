@@ -1,4 +1,5 @@
 # Projekt-cytaty-
-aplikacja wyświetlająca losowe cytaty autorów (Szekspir, Szymborska itd.) wraz z linkiem do dodatkowych informacji.
-Cel: Nauka pracy zespołowej, GitHuba, podstaw AI w front-endzie, promowanie humanistyki i literatury
-Skład zespołu: Maja Ś oraz Klaudia T.
+Biblioteka Cytatów to interaktywna strona, która pozwala przeglądać losowe cytaty wybranych autorów. Rozwiązanie jest przeznaczone dla miłośników literatury i filozofii, którzy chcą zainspirować się słowami znanych myślicieli.
+Zespół projektowy
+•	Maja Ściesińska 
+•	Klaudia Tomza
